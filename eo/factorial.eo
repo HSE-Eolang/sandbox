@@ -1,0 +1,7 @@
++package sandbox
+
+[n] > factorial
+  if. > @
+    n.eq 0
+    1
+    n.mul (factorial (n.sub 1))

@@ -1,0 +1,31 @@
++package sandbox
++alias stdout org.eolang.io.stdout
++alias sprintf org.eolang.txt.sprintf
+
+[args...] > minfive
+  memory > min
+  seq > @
+    (args.get 0).toInt > m
+    (args.get 1).toInt > n
+    (args.get 2).toInt > o
+    (args.get 3).toInt > p
+    (args.get 4).toInt > q
+    (m.less n).if
+      min.write m
+      min.write n
+    (min.less o).if
+      true
+      min.write o
+    (min.less p).if
+      true
+      min.write p
+    (min.less q).if
+      true
+      min.write q
+    disp min
+
+  [n] > disp
+    stdout > @
+      sprintf
+        "Maximum number is %d\n"
+        n
