@@ -2,30 +2,21 @@
 +alias stdout org.eolang.io.stdout
 +alias sprintf org.eolang.txt.sprintf
 
-[args...] > maxfive
+[args...] > app
   memory > max
+  memory > temp
+  memory > x
   seq > @
-    (args.get 0).toInt > m
-    (args.get 1).toInt > n
-    (args.get 2).toInt > o
-    (args.get 3).toInt > p
-    (args.get 4).toInt > q
-    (m.less n).if
-      max.write n
-      max.write m
-    (max.less o).if
-      max.write o
-      false
-    (max.less p).if
-      max.write p
-      false
-    (max.less q).if
-      max.write q
-      false
-    disp max
-
-  [n] > disp
-    stdout > @
-      sprintf
-        "Maximum number is %d\n"
-        n
+    max.write (args.get 0).toInt
+    x.write 0
+    while.
+      x.less 5
+      [i]
+        seq > @
+          temp.write (args.get i).toInt
+          (max.less temp).if
+            max.write (temp)
+            false
+          x.write (x.add 1)
+    stdout
+      sprintf "Maximum number is %d\n" max
