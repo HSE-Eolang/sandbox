@@ -2,21 +2,22 @@
 +alias stdout org.eolang.io.stdout
 +alias sprintf org.eolang.txt.sprintf
 
-[args...] > minfive
-  memory > min
+[args...] > linearsearchfive
+  memory > key
   memory > temp
+  (args.get 5).toInt > elem
   memory > x
   seq > @
-    min.write (args.get 0).toInt
+    key.write -1
     x.write 0
     while.
       x.less 5
       [i]
         seq > @
           temp.write (args.get i).toInt
-          (temp.less min).if
-            min.write (temp)
+          (elem.eq temp).if
+            key.write i
             false
           x.write (x.add 1)
     stdout
-      sprintf "Minimum number is %d\n" min
+      sprintf "Element is found at index %d\n" key

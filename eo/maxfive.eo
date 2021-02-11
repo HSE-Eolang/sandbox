@@ -2,7 +2,7 @@
 +alias stdout org.eolang.io.stdout
 +alias sprintf org.eolang.txt.sprintf
 
-[args...] > app
+[args...] > maxfive
   memory > max
   memory > temp
   memory > x
