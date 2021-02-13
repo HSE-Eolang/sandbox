@@ -1,0 +1,18 @@
++package sandbox
+
+[args...] > max
+  [accumulator current] > reduceFunction
+    if. > @
+      current.toInt.less accumulator
+      accumulator
+      current.toInt
+
+  reduce. > biggest
+    args
+    0
+    reduceFunction
+
+  stdout > @
+    sprintf
+      "%d\n"
+      biggest

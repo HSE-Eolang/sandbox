@@ -1,0 +1,18 @@
++package sandbox
+
+[args...] > min
+  [accumulator current] > reduceFunction
+    if. > @
+      current.toInt.less accumulator
+      current.toInt
+      accumulator
+
+  reduce. > smallest
+    args
+    9223372036854775807
+    reduceFunction
+
+  stdout > @
+    sprintf
+      "%d\n"
+      smallest

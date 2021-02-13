@@ -34,8 +34,7 @@ $ ./run.sh 9
 9th Fibonacci number is 34
 ```
 
-Should work. If it doesn't, [submit an issue](https://github.com/cqfn/eo/issues),
-we will fix it.
+Should work.
 
 Then, you can modify `*.eo` files, run `mvn compile` to compile them
 again and `run.sh` to run it again.
