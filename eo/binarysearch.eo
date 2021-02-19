@@ -2,7 +2,7 @@
 +alias stdout org.eolang.io.stdout
 +alias sprintf org.eolang.txt.sprintf
 
-[l r x args...] > binarySearch
+[l r x args...] > binarysearch
   memory > mid
   ((l.less r).or (l.eq r)).if > @
     mid.write (l.add ((r.sub l).div 2))
