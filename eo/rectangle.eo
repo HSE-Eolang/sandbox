@@ -1,0 +1,15 @@
++package sandbox
+
+[x y] > rectangle
+  if. > @
+    (x.less y).or (y.less x)
+    true
+    false
+
+  mul. > perimeter
+    (x.add y)
+    2
+
+  mul. > area
+    x
+    y

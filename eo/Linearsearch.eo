@@ -1,0 +1,21 @@
++package sandbox
++alias stdout org.eolang.io.stdout
++alias sprintf org.eolang.txt.sprintf
+
+[args...] > linearsearch
+  memory > key
+  memory > x
+  args.get (args.length.sub 1) > elem
+  seq > @
+    key.write -1
+    x.write 0
+    while.
+      x.less ($.args.length.sub 1)
+      [i]
+        seq > @
+          ((^.elem.toInt).eq (^.args.get i).toInt).if
+            ^.key.write i
+            false
+          ^.x.write (^.x.add 1)
+    stdout
+      sprintf "Element is found at index %d\n" key

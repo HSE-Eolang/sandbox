@@ -9,14 +9,3 @@
       "%dth Fibonacci number is %d\n"
       (args.get 0).toInt > n
       fibonacci n
-
-[l r x args...] > binarySearch
-  memory > mid
-  ((l.less r).or (l.eq r)).if > @
-    mid.write (l.add ((r.sub l).div 2))
-      ((args.get mid).eq x).if
-        mid
-          (x.less (args.get mid)).if
-            binarySearch l (mid.sub 1) x args
-            binarySearch (mid.add 1) r x args
-    -1
