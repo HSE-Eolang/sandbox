@@ -1,14 +1,47 @@
 +package sandbox
-+alias stdout org.eolang.io.stdout
-+alias sprintf org.eolang.txt.sprintf
 
-[l r x args...] > binarysearch
+# This code is not working correctly
+[l r x arr] > binarysearch
+  memory > mid
+  seq > @
+    mid.write (l.add ((r.sub l).div 2))
+    ((l.less r).or (l.eq r)).if
+      first
+      -1
+
+  ((arr.get mid).toInt.eq x).if > first
+    mid
+    second
+
+  (x.less (arr.get mid).toInt).if > second
+    binarysearch l (mid.sub 1) x arr
+    binarysearch (mid.add 1) r x arr
+
+
+
++package sandbox
+
+[l r x arr] > binarysearch
+  memory > mid
+  seq > @
+    mid.write (l.add ((r.sub l).div 2))
+    ((l.less r).or (l.eq r)).if
+      ((arr.get mid).toInt.eq x).if
+        mid
+        (x.less (arr.get mid).toInt).if
+          binarysearch l (mid.sub 1) x arr
+          binarysearch (mid.add 1) r x arr
+      -1
+
+
+
+[l r x arr] > binarysearch
   memory > mid
   ((l.less r).or (l.eq r)).if > @
     mid.write (l.add ((r.sub l).div 2))
-      ((args.get mid).eq x).if
+      ((arr.get mid).toInt.eq x).if
         mid
-          (x.less (args.get mid)).if
-            binarySearch l (mid.sub 1) x args
-            binarySearch (mid.add 1) r x args
+        (x.less (arr.get mid).toInt).if
+          binarysearch l (mid.sub 1) x arr
+          binarysearch (mid.add 1) r x arr
     -1
