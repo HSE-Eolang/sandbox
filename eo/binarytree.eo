@@ -2,6 +2,8 @@
 +alias stdout org.eolang.io.stdout
 +alias sprintf org.eolang.txt.sprintf
 
+# This code is not working
+# Still in development
 [n] > node
   n > @
   memory > left

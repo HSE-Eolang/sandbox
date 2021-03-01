@@ -1,0 +1,17 @@
++package sandbox
+
+[args...] > sum
+  [accumulator current] > getSum
+    add. > @
+      accumulator
+      current.toInt
+
+  reduce. > sum
+    args
+    0
+    getSum
+
+  stdout > @
+    sprintf
+      "%d\n"
+      sum

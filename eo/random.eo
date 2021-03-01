@@ -1,0 +1,8 @@
++package sandbox
+
+[args...] > random
+  sprintf > @
+    stdout
+      "Random float: $f\nRandom float: %f\n"
+      random
+      random
