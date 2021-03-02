@@ -1,8 +1,15 @@
 +package sandbox
++alias stdout org.eolang.io.stdout
++alias sprintf org.eolang.txt.sprintf
 
 [args...] > random
   stdout > @
     sprintf
-      "Random float: $f\nRandom float: %f\n"
+      "Random float: %f\nNegative: %f\nPower: %f\nRandom mul: %f\nRandom div: %f\nRandom equality: %b\nRandom <: %b\n"
       random
-      random
+      0.23.neg
+      random.pow 9.0
+      (100.toFloat).mul random
+      10.0.div random
+      random.eq random
+      1.0.less random

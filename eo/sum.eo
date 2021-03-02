@@ -13,5 +13,5 @@
 
   stdout > @
     sprintf
-      "%d\n"
+      "Sum is %d\n"
       sum
