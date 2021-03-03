@@ -5,8 +5,8 @@
 [args...] > random
   stdout > @
     sprintf
-      "Random float: %f\nNegative: %f\nPower: %f\nRandom mul: %f\nRandom div: %f\nRandom equality: %b\nRandom <: %b\n"
-      random
+      "Random number between 1 and 5: %f\nNegative: %f\nPower: %f\nRandom mul: %f\nRandom div: %f\nRandom equality: %b\nRandom <: %b\n"
+      (random.mul 5.0).add 1.0
       0.23.neg
       random.pow 9.0
       (100.toFloat).mul random
