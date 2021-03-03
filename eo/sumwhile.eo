@@ -1,17 +1,19 @@
 +package sandbox
 
 [args...] > sumwhile
-  [accumulator current] > getSum
-    add. > @
-      accumulator
-      current.toInt
-
-  reduce. > sum
-    args
-    0
-    getSum
-
-  stdout > @
-    sprintf
-      "Sum is %d\n"
-      sum
+  memory > sum
+  memory > count
+  seq > @
+    memory > sum
+  memory > count
+  seq > @
+    count.write 0
+    sum.write 0
+    while.
+      count.less ($.args.length)
+      [i]
+        seq > @
+          ^.sum.write (^.sum.add (^.args.get i).toInt)
+          ^.count.write (^.count.add 1)
+    stdout
+      sprintf "Sum is %d\n" sum
